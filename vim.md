@@ -10,4 +10,4 @@
 
 4. **Return**  and    **+**  光标移到下一行的开头         **-**  光标移到上一行的开头
 
-5. **w**     cursor to next word start.        **e**  cursor to next word end       **b**  cursor to before word start
+5. **w**     cursor to next word start.        **e**  cursor to next word end.       **b**  cursor to before word start
