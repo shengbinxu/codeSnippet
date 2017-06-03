@@ -8,6 +8,6 @@
 
    1. > 大部分vim命令模式下的命令都是**vi命令**。如w,j,h。   **ex命令**是以:(冒号)开头的命令。如 :%s/a/b/gc
 
-4. <Return>  and    **+**  光标移到下一行的开头         **-**  光标移到上一行的开头
+4. **Return**  and    **+**  光标移到下一行的开头         **-**  光标移到上一行的开头
 
 5. **w**     cursor to next word start.        **e**  cursor to next word end       **b**  cursor to before word start
