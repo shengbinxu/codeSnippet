@@ -33,9 +33,8 @@
       >
       > 因此，序列CR-LF 执行打印一个新行所需的准备动作。
 
-   2. 在键盘上，按下 **return键**或者**^M**（他们等价）可以发送一个CR码。 按下**Linefeed键**或者**^J**键可以发送LF码。
+   2. 在键盘上，按下 **return键**或者** ^M **（他们等价）可以发送一个CR码。 按下**Linefeed键**或者**^J**键可以发送LF码。
 
    3. vim 中 **vim -b filename** 命令，可以显示回车、换行符。参见
 
       [链接]: https://stackoverflow.com/questions/3860519/see-line-breaks-and-carriage-returns-in-editor
-
