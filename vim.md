@@ -36,3 +36,9 @@
    2. 在键盘上，按下 **return键**或者 ^M （他们等价）可以发送一个CR码。 按下**Linefeed键**或者^J键可以发送LF码。
 
    3. vim 中 **vim -b filename** 命令，可以显示回车、换行符。参见[stackoverflow](https://stackoverflow.com/questions/3860519/see-line-breaks-and-carriage-returns-in-editor)
+
+7. 光标以句子或者段落为单位移动。
+
+   1. > **（**、**）**括号向前向后移动一个句子。 **{**、**}** 大括号向前向后移动一个段落。
+      >
+      > 通常，编辑代码的时候，两个句子之间键入两个空格，两个段落之间放入一个空白行。这样在使用vim的时候，便于快速移动。
