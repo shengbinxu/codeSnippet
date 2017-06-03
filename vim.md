@@ -10,5 +10,16 @@
 
 4. **Return**  and    **+**  光标移到下一行的开头         **-**  光标移到上一行的开头
 
-5. **w**     cursor to next word start.        **e**  cursor to next word end.       **b**  cursor to before word start
+5. 光标以单词为单位移动。
 
+   1. **w**  cursor to next word start.        
+
+   2. **e**  cursor to next word end.      
+
+   3. **b**  cursor to before word start
+
+   4. **W**  **E**  **B**  同上面的w,e,b  上面的三个命令是以**空格、和标点符号**界定单词的。下面这三个大写的是以**空格**界定单词的。
+
+      > This is an (important) test; don`t forget to study.
+      >
+      > 这一行，需要按13次**w**才能移动到最后一次单词。 而使用**W**需要8次就可以移动到最后一个单词。
