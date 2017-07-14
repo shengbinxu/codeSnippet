@@ -6,11 +6,13 @@ Every time you type a sequence of commands in a pipeline for the shell toexecute
 
 3、管道原理
 
-![img](file:///C:/Users/XUSHEN~1/AppData/Local/Temp/enhtmlclip/Image.png)![img](file:///C:/Users/XUSHEN~1/AppData/Local/Temp/enhtmlclip/Image(1).png)
+![](./images/1.png)
+![](./images/2.png)
 
 >  A pipe in a single process is next to useless. Normally, the process that calls pipethen calls fork, creating an IPC channel from the parent to the child, or vice versa.
 
-![img](file:///C:/Users/XUSHEN~1/AppData/Local/Temp/enhtmlclip/Image(2).png)
+![](./images/3.png)
+
 
 > 疑问： fork之后，内核中的管道是父进程、子进程共享？
 >
@@ -20,9 +22,9 @@ Every time you type a sequence of commands in a pipeline for the shell toexecute
 
 4、管道的一个经常用法：
 
-![img](file:///C:/Users/XUSHEN~1/AppData/Local/Temp/enhtmlclip/Image(3).png)把管	   
+![](./images/4.png)
 
-> 管道的fd复制到标准输入、输出，然后在子进程中运行其他程序，这个程序可以从标准输入读取数据，然后往标准输出（管道）写入数据。
+> 把管道的fd复制到标准输入、输出，然后在子进程中运行其他程序，这个程序可以从标准输入读取数据，然后往标准输出（管道）写入数据。
 
 5、利用管道实现一个分页程序：调用系统程序/bin/less
 
