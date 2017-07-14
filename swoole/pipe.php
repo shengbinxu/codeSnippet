@@ -34,7 +34,8 @@ class pipe
         $process = new swoole_process(function (swoole_process $process) use ($index) {
             swoole_set_process_name(sprintf('php-ps:%s', $index));
             sleep(3);
-            $process->write(posix_getpid() . "\r\n");
+            $write_return = $process->write(posix_getpid() . "\r\n");
+            echo 'write_result :' . $write_return . "\r\n";
         });
         $pid = $process->start();
         $this->workers[$process->pipe] = $process;
