@@ -17,12 +17,12 @@ $serv->on('Connect', 'my_onConnect');
 $serv->on('Receive', 'my_onReceive');
 $serv->on('Close', 'my_onClose');
 function my_onConnect(){
-    trigger_error('on connect' . "\r\n");
+    echo 'on connect' . "\r\n";
 }
 function my_onReceive(){
-    trigger_error('on receive' . "\r\n");
+    echo 'on receive' . "\r\n";
 }
 function my_onClose(){
-    trigger_error('on close' . "\r\n");
+    echo 'on close' . "\r\n";
 }
 $serv->start();
