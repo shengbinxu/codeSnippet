@@ -10,7 +10,7 @@
 $serv = new swoole_server('127.0.0.1', 9501, SWOOLE_PROCESS,SWOOLE_SOCK_TCP);
 $serv->set(array(
     'worker_num' => 4,
-    'daemonize' => true,
+//    'daemonize' => true,
     'backlog' => 128,
 ));
 $serv->on('Connect', 'my_onConnect');
