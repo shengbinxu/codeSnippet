@@ -16,7 +16,7 @@
   > 为了避免长时间阻塞worker进程，把耗时的任务交给task进程处理。
 
 
-    ```
+    ​```
   <?php
   /**
    * swoole server
@@ -24,7 +24,7 @@
    * User: xushengbin
    * Date: 2017/7/16
    * Time: 9:48
-   */
+        */
 
   $serv = new swoole_server('127.0.0.1', 9501, SWOOLE_PROCESS,SWOOLE_SOCK_TCP);
   $serv->set(array(
@@ -60,14 +60,16 @@
 
   $serv->start();
 
-    ```
+    ​```
 
-  这个例子中，设置worker进程的数量为1，task_worker进程的数量为2，在onReceive中启动一个task进程，onTask中耗时5秒执行一个任务，由于task函数是非阻塞的，这样，同一个worker进程就可以并发处理多个客户端请求。反正，如果把5秒耗时操作放在worker进程中执行，那么这个server每5秒内只能处理一个并发请求。
+  这个例子中，设置worker进程的数量为1，task_worker进程的数量为2，在onReceive中启动一个task进程，onTask中耗时5秒执行一个任务，由于task函数是非阻塞的，这样，同一个worker进程就可以并发处理多个客户端请求。反之，如果把5秒耗时操作放在worker进程中执行，那么这个server每5秒内只能处理一个并发请求。
 
   > 由此，联想到redis的reactor模型：
   >
   > redis是单线程的，在redis中任意一个耗时的请求，就会导致其他请求在排队。因为，在redis中客户端要尽力避免执行超过10ms的命令。
   >
   > 同样的，在swoole的worker进程中，是不是也尽量不要处理耗时的任务，或者说，当不得不处理耗时任务的时候，需要把worker_num调大呢？ 
+  >
+  > 补充一点：reactor模型基于epool，每一个socket链接都是一个fd，reactor负责检测fd的可读、可写状态，然后把请求调度(dispatch)给对应的worker进程。那么，如果worker进程超负荷，就会导致没有空闲worker进程可供reactor调度。
   >
   > ​
