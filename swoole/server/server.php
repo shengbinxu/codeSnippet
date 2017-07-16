@@ -14,15 +14,32 @@ $serv->set(array(
     'backlog' => 128,
 ));
 $serv->on('Connect', 'my_onConnect');
-$serv->on('Receive', 'my_onReceive');
 $serv->on('Close', 'my_onClose');
 function my_onConnect(){
     echo 'on connect' . "\r\n";
 }
-function my_onReceive(){
-    echo 'on receive' . "\r\n";
-}
+
 function my_onClose(){
     echo 'on close' . "\r\n";
 }
+
+$process = new swoole_process(function($process) use ($serv) {
+    swoole_set_process_name(sprintf('php-ps:%s', 'subProcess'));
+    while (true) {
+        $msg = $process->read();
+        foreach($serv->connections as $conn) {
+            $serv->send($conn, $msg);
+        }
+    }
+});
+
+$serv->addProcess($process);
+$serv->on('Receive',function ($serv, $fd, $from_id, $data) use($process){
+    $serv->send($fd, 'Swoole: '.$data);
+    $serv->close($fd);
+    echo 'on receive' . "\r\n";
+    $process->write($data);
+} );
+
+//$process->write(time());
 $serv->start();

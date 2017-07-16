@@ -9,8 +9,8 @@ $fp = fsockopen("tcp://127.0.0.1", 9501, $errno, $errstr, 30);
 if (!$fp) {
     echo "$errstr ($errno)<br />\n";
 } else {
-    echo 'write';
     fwrite($fp, "hello\n");
+    echo 'receive:';
     echo fread($fp,100);
     fclose($fp);
 }
