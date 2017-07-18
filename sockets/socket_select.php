@@ -1,5 +1,8 @@
 #!/usr/local/bin/php
 <?php
+/**
+ *
+ */
 
 $port = 9050;
 // create a streaming socket, of type TCP/IP
