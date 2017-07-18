@@ -18,6 +18,10 @@
 
   对应php的socket_select方法，参考`socket_select.php`
 
-  注意一点：*IO 多路复用要和非阻塞 IO一起使用*， 原因参见
+  注意一点：**IO 多路复用要和非阻塞 IO一起使用**， 原因参见
 
-  > https://www.zhihu.com/question/37271342
+  > https://www.zhihu.com/question/37271342-
+
+- #####  Signal-Driven I/O model
+
+- ##### Asynchronous I/O Model
