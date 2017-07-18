@@ -23,13 +23,13 @@ while (true) {
     // if there are no clients with data, go to next iteration
     $write = NULL;
     $except = NULL;
+    echo 'read:' . "\r\n";
+    var_dump($read);
     //初始状态，select监听服务端socket的可读状态：当有新的client connection到来，服务端socket状态可读。
     //因此，服务端socket负责处理客户端连接。
-    if (socket_select($read, $write, $except, 0) < 1){//tv_sec 为0，函数立马返回.
+    if (socket_select($read, $write, $except, 5) < 1){//tv_sec 为0，函数立马返回.
         continue;
     }
-    echo 'after' . "\r\n";
-    var_dump($read) . "\r\n";
     // check if there is a client trying to connect
     if (in_array($sock, $read)) {
         // accept the client, and add him to the $clients array
