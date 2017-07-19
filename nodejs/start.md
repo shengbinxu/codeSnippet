@@ -12,7 +12,7 @@ NodeJS的作者说，他创造NodeJS的目的是为了实现**高性能Web服务
 
 > https://socket.io/get-started/chat/
 
-
+这个例子可以很好地印证：websocket协议是有状态、双向通信，服务端可以给客户端push消息。
 
 
 
