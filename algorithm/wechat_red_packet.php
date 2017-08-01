@@ -71,6 +71,7 @@ echo 'check_sum:' . array_sum($a_money) . "\r\n";
 
 /**
  * 算法三：对红包金额设定限额：比如100个红包，10份，每份金额在6-12元之间:平均值的0.6倍 ~ 1.2倍之间。
+ * 参考http://www.cnblogs.com/hanganglin/p/6496422.html
  * 算法思想：
  */
 /*
