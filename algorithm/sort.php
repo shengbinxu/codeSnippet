@@ -52,7 +52,18 @@ class Sort{
             self::quick_sort_recursion($arr,$pi+1,$high);
         }
     }
-    //分区
+
+    /**
+     * 分区的思路：
+     * 1、找最右边一个元素作为基准元素X
+     * 2、从左边开始，找出第一个比X小的元素，与arr[0]交换
+     * 3、继续，再找一个比X小的元素，与arr[1]交换。继续。。。直到找不到比X小的元素，然后把X和arr[i+1]交换。
+     * 最终的效果就是：arr[i+1] 左边的元素都比他小，后边的都比他大。
+     * @param $arr
+     * @param $low
+     * @param $high
+     * @return mixed
+     */
     private static function partition(&$arr,$low,$high){
         // pick last element as pivot (枢纽、中心)
         $pivot = $arr[$high];
@@ -95,4 +106,5 @@ while($i < $arr_count){
 $sorted_data = Sort::do_php_sort($data);
 //正常情况下，快速排序是php sort()方法执行时间的10倍。当数据重复度比较高的时候，快速排序性能急剧下降。
 $sorted_data = Sort::do_quick_sort($data,0,count($data)-1);
+
 
