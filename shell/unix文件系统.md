@@ -134,3 +134,35 @@ Some text: Write this to the file
 >
 > 知道了umask的作用后，你可以修改umask的值了，例如:umask　024则以后建立的文件和目录的默认权限就为642,753了
 
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#define RWRWRW (S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH)
+int
+main(void)
+{
+    umask(0);
+    //The permissions of the created file are (mode & ~umask)
+    if (open("foo",O_CREAT|O_RDWR, RWRWRW) < 0)
+        printf("creat error for foo");
+    umask(S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+    if (open("bar",O_CREAT|O_RDWR, RWRWRW) < 0)
+        printf("creat error for bar");
+    exit(0);
+}
+```
+
+output:
+
+```
+ ls -alt {foo*,bar*}
+-rw------- 1 xushengbin xushengbin 0 Aug 23 18:17 bar
+-rw-rw-rw- 1 xushengbin xushengbin 0 Aug 23 18:17 foo
+```
+
+open 创建的文件的权限是`mode & ~umask`
