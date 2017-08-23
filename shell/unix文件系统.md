@@ -22,13 +22,13 @@ xushengbin:$6$E9LHZu30$4FoG4e4h79grxHOeJaGAi2F/D3pJeTnu0qct/XFisyd.kQAWRM0u4PJO.
 有两点：
 
 1.  `/usr/bin/passwd` 程序的权限中有个`s`，这个可执行文件的owner是root用户
-2.  执行`passwd`命令修改密码时，使用当前用户执行，不需要sudo权限，但是，却有权限往`/etc/shadow` 文件中写入，而`/etc/shadow`文件只有root用户才有write权限。
+2.  执行`passwd`命令修改密码时，使用当前用户（非sudo）执行，但是，却有权限往`/etc/shadow` (only root can write) 文件中写入
 
 **关键点来了**：
 
 **suid 给用户一种权限：可以使用文件owner的权限来执行一个程序，而不是使用运行用户的权限来执行**
 
-结合前面的例子：passwd可执行程序，使用的是这个程序的owner：root用户来执行程序的，而不是使用当前用户:xushengbin 来执行这个程序。
+结合前面的例子：passwd可执行程序，使用的是这个程序的owner（root用户）来执行程序的，而不是使用当前用户（xushengbin） 来执行这个程序。
 
 再看一个我自己写的测试demo:
 
