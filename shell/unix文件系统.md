@@ -165,4 +165,7 @@ output:
 -rw-rw-rw- 1 xushengbin xushengbin 0 Aug 23 18:17 foo
 ```
 
-open 创建的文件的权限是`mode & ~umask`
+**open 创建的文件的权限是`mode & ~umask`**
+
+
+
