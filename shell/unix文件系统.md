@@ -57,6 +57,8 @@ int main()
    fprintf(f, "Some text: %s\n", text);
    printf("My UID is: %d. My GID is: %d\n", getuid(), getgid());
    printf("My Effective UID is: %d. My GID is: %d\n", geteuid(), getegid());
+   //when we open a file, the kernel performs its access tests based on the effective user and group IDs
+   // The access and faccessat functions base their tests on the real user and group IDs
    if(access("/root/suid.txt", R_OK)==0)  printf("READ OK\n");  
    if(access("/root/suid.txt", W_OK)==0)  printf("WRITE OK\n");  
    if(access("/root/suid.txt", X_OK)==0)  printf("EXEC OK\n");  
