@@ -40,10 +40,12 @@ xushengbin:$6$E9LHZu30$4FoG4e4h79grxHOeJaGAi2F/D3pJeTnu0qct/XFisyd.kQAWRM0u4PJO.
 
 int main()
 {
-   int current_uid = getuid();
-   printf("My UID is: %d. My GID is: %d\n", current_uid, getgid());
-   setuid( 0 );
-   FILE *f = fopen("/root/suid.txt", "w");
+   printf("My UID is: %d. My GID is: %d\n", getuid(), getgid());
+   printf("My Effective UID is: %d. My GID is: %d\n", geteuid(), getegid());
+   //If the process has appropriate privileges, setuid() shall set the real user ID, effective user ID, and the saved set-user-ID of the calling process to uid.
+   int result = setuid( 0 );
+   printf("set uid result: %i\n",result);
+   FILE *f = fopen("/root/suid.txt", "wb");
    if (f == NULL)
    {
        printf("Error opening file!\n");
@@ -54,7 +56,11 @@ int main()
    const char *text = "Write this to the file";
    fprintf(f, "Some text: %s\n", text);
    printf("My UID is: %d. My GID is: %d\n", getuid(), getgid());
-   return 0;
+   printf("My Effective UID is: %d. My GID is: %d\n", geteuid(), getegid());
+   if(access("/root/suid.txt", R_OK)==0)  printf("READ OK\n");  
+   if(access("/root/suid.txt", W_OK)==0)  printf("WRITE OK\n");  
+   if(access("/root/suid.txt", X_OK)==0)  printf("EXEC OK\n");  
+   if(access("/root/suid.txt", F_OK)==0)   printf("File exist\n");
 }
 
 ```
@@ -76,7 +82,14 @@ ls -al suid
 
 ./suid 
 My UID is: 1000. My GID is: 1000
+My Effective UID is: 0. My GID is: 0
+set uid result: 0
 My UID is: 0. My GID is: 1000
+My Effective UID is: 0. My GID is: 0
+READ OK
+WRITE OK
+File exist
+
 
 sudo cat /root/suid.txt
 Some text: Write this to the file
