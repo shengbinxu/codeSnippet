@@ -98,6 +98,7 @@ Some text: Write this to the file
 > Similarly, we can set another bit in the file’s mode word that causes the effective group
 > ID to be the group owner of the file (st_gid). These two bits in the file’s mode word
 > are called the set-user-ID bit and the set-group-ID bit.
+>
 > For example, if the owner of the file is the superuser and if the file’s set-user-ID bit
 > is set, then while that program file is running as a process, it has superuser privileges.
 > This happens regardless of the real user ID of the process that executes the file. As an
@@ -107,6 +108,7 @@ Some text: Write this to the file
 > files that should be writable only by the superuser. Because a process that is running
 > set-user-ID to some other user usually assumes extra permissions, it must be written
 > carefully.
+>
 > Returning to the stat function, the set-user-ID bit and the set-group-ID bit are
 > contained in the file’s st_mode value. These two bits can be tested against the
 > constants S_ISUID and S_ISGID, respectively.
