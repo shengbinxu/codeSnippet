@@ -172,5 +172,50 @@ output:
 
 **open 创建的文件的权限是`mode & ~umask`**
 
+## inode
 
+### link
 
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int main(void)
+{
+    if(linkat(AT_FDCWD,"./umask.c", AT_FDCWD,"./link_umask.c",0) < 0){
+       printf("link error"); 
+    }
+    exit(0);
+}
+```
+
+output:
+
+```
+ ls -ali
+total 32
+793447 drwxrwxr-x  2 xushengbin xushengbin 4096 Aug 24 11:02 .
+262277 drwxrwxrwt 14 root       root       4096 Aug 24 11:04 ..
+819763 -rwxrwxr-x  1 xushengbin xushengbin 8504 Aug 24 11:02 a.out
+819761 -rw-rw-r--  1 xushengbin xushengbin  263 Aug 24 11:02 inode.c
+819758 -rw-rw-r--  2 xushengbin xushengbin  522 Aug 24 10:57 link_umask.c
+819758 -rw-rw-r--  2 xushengbin xushengbin  522 Aug 24 10:57 umask.c
+//link_umask.c、umask.c的inode number一样
+
+stat link_umask.c
+  File: 'link_umask.c'
+  Size: 522       	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 819758      Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/xushengbin)   Gid: ( 1000/xushengbin)
+Access: 2017-08-24 11:02:28.775246891 +0800
+Modify: 2017-08-24 10:57:57.174515790 +0800
+Change: 2017-08-24 11:02:21.537418132 +0800
+ Birth: -
+// link之后，inode links加1，为2
+
+//修改mask.c之后，link_mask.c的内容也跟着变化；反之也是。
+```
