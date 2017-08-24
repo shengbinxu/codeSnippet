@@ -176,6 +176,8 @@ output:
 
 ### link
 
+> 参考https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -219,3 +221,14 @@ Change: 2017-08-24 11:02:21.537418132 +0800
 
 //修改mask.c之后，link_mask.c的内容也跟着变化；反之也是。
 ```
+c中link()函数，对应的就是linux的硬链接：
+
+> 硬链接就是同一个文件使用了多个别名
+>
+> 硬链接可由命令 link 或 ln 创建
+>
+> 文件有相同的 inode 及 data block
+>
+> 不能对目录进行创建，只可对文件创建
+>
+> 删除一个硬链接文件并不影响其他有相同 inode 号的文件
