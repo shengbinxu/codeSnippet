@@ -232,3 +232,24 @@ c中link()函数，对应的就是linux的硬链接：
 > 不能对目录进行创建，只可对文件创建
 >
 > 删除一个硬链接文件并不影响其他有相同 inode 号的文件
+
+注意：不能跨文件系统创建硬链接
+
+```
+df     
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              992556       0    992556   0% /dev
+tmpfs             202852   26676    176176  14% /run
+/dev/sda1       19478160 8752336   9713344  48% /
+tmpfs            1014244     156   1014088   1% /dev/shm
+tmpfs               5120       4      5116   1% /run/lock
+tmpfs            1014244       0   1014244   0% /sys/fs/cgroup
+tmpfs             202848      32    202816   1% /run/user/119
+tmpfs             202848       4    202844   1% /run/user/1000
+
+//df命令：print file system type
+
+link umask.c /dev/link_umask.c
+link: cannot create link '/dev/link_umask.c' to 'umask.c': Invalid cross-device link
+```
+
