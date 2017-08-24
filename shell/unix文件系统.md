@@ -174,7 +174,7 @@ output:
 
 ## inode
 
-### link
+### link-硬链接
 
 > 参考https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html
 
@@ -233,7 +233,7 @@ c中link()函数，对应的就是linux的硬链接：
 >
 > 删除一个硬链接文件并不影响其他有相同 inode 号的文件
 
-注意：不能跨文件系统创建硬链接
+**注意：不能跨文件系统创建硬链接**
 
 ```
 df     
@@ -253,3 +253,17 @@ link umask.c /dev/link_umask.c
 link: cannot create link '/dev/link_umask.c' to 'umask.c': Invalid cross-device link
 ```
 
+**查找有相同 inode 号的文件**
+
+```
+sudo find / -inum 819758
+/tmp/inode_test/link_umask.c
+/tmp/inode_test/umask.c
+/home/xushengbin/link_umask.c
+```
+
+### 软连接
+
+> 软链接有着自己的 inode 号以及用户数据块：见https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html
+>
+> 
