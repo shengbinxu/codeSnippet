@@ -32,7 +32,7 @@ xushengbin:$6$E9LHZu30$4FoG4e4h79grxHOeJaGAi2F/D3pJeTnu0qct/XFisyd.kQAWRM0u4PJO.
 
 再看一个我自己写的测试demo:
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -64,7 +64,6 @@ int main()
    if(access("/root/suid.txt", X_OK)==0)  printf("EXEC OK\n");  
    if(access("/root/suid.txt", F_OK)==0)   printf("File exist\n");
 }
-
 ```
 
 ```
@@ -139,7 +138,7 @@ Some text: Write this to the file
 
 
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -178,7 +177,7 @@ output:
 
 > 参考https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -255,7 +254,7 @@ link: cannot create link '/dev/link_umask.c' to 'umask.c': Invalid cross-device 
 
 **查找有相同 inode 号的文件**
 
-```
+```shell
 sudo find / -inum 819758
 /tmp/inode_test/link_umask.c
 /tmp/inode_test/umask.c
