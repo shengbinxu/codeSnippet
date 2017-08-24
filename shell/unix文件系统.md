@@ -266,4 +266,31 @@ sudo find / -inum 819758
 
 > 软链接有着自己的 inode 号以及用户数据块：见https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html
 >
-> 
+> 与硬链接不同，软连接可以跨文件系统创建
+
+## file times
+
+```c
+int main(void)
+{
+	struct stat statbuf;
+    if (stat("./sandir.php", &statbuf) == -1) {
+	    printf("stat error");
+        exit(1);
+    }
+    printf("last-access time of file data %i\n",statbuf.st_atime);
+    printf("last-modification time of file data %i\n",statbuf.st_mtime);
+    printf("last-change time of i-node status %i\n",statbuf.st_ctime);
+}
+```
+
+shell命令查看
+
+```shell
+ls -lu sandir.php //look at last-access times
+-rwxr-xr-x 1 xushengbin xushengbin 146 Aug 24 13:04 sandir.php
+ls -l sandir.php //look at last-modification times
+-rwxr-xr-x 1 xushengbin xushengbin 146 Aug 24 13:04 sandir.php
+ls -lc sandir.php  //the changed-status times
+-rwxr-xr-x 1 xushengbin xushengbin 146 Aug 24 13:47 sandir.php
+```
