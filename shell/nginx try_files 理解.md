@@ -40,7 +40,7 @@ yingyan/ 目录存在，目录下有文件index.html
 
 ### 示例2：fallback 404
 
-请求“http://local.bee.test/noexitsdir?a=1”，返回
+请求“http://local.bee.test/noexitsdir?a=1”， 返回
 
 ```html
 
@@ -91,7 +91,7 @@ debug log 中很关键的一行，**trying to use file: "/index.php?a=1"** ， n
 
 ### 示例3：返回index.php文件内容
 
-请求“http://local.bee.test/noexitsdir”,返回
+请求“http://local.bee.test/noexitsdir”, 返回
 
 ```
 index.php文件的内容
