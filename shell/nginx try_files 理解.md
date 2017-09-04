@@ -9,9 +9,8 @@ Context:	server, location
 
 ## 定义
 
-```
-Checks the existence of files in the specified order and uses the first found file for request processing; the processing is performed in the current context. The path to a file is constructed from the file parameter according to the root and alias directives. It is possible to check directory’s existence by specifying a slash at the end of a name, e.g. “$uri/”. If none of the files were found, an internal redirect to the uri specified in the last parameter is made
-```
+> Checks the existence of files in the specified order and uses the first found file for request 
+> processing; the processing is performed in the current context. The path to a file is constructed from the file parameter according to the root and alias directives. It is possible to check directory’s existence by specifying a slash at the end of a name, e.g. “$uri/”. If none of the files were found, an internal redirect to the uri specified in the last parameter is made
 
 关键点：
 
@@ -87,6 +86,8 @@ nginx debug log:
 ```
 
 debug log 中很关键的一行，**trying to use file: "/index.php?a=1"** ， nginx 把包括参数的部分作为文件名，这个文件当然不存在了，于是就fallback到404，给客户端返回http 404。
+
+如果把try_files指令修改成`try_files $uri $uri/ /index.php =404;` ,去掉参数部分，同样的请求，就会返回index.php文件的内容，而不是404。原理和前面分析的一样。
 
 ### 返回index.php文件内容
 
