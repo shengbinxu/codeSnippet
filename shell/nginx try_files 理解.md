@@ -30,7 +30,7 @@ location / {
 
 yingyan/ 目录存在，目录下有文件index.html
 
-### 返回目录中index文件
+### 示例1：返回目录中index文件
 
 请求"http://local.bee.test/yingyan/?i=84464&k=86DOfEvtIRQulG3PNq4MX191", 
 
@@ -38,7 +38,7 @@ yingyan/ 目录存在，目录下有文件index.html
 
 
 
-### fallback 404
+### 示例2：fallback 404
 
 请求“http://local.bee.test/noexitsdir?a=1”，返回
 
@@ -89,7 +89,7 @@ debug log 中很关键的一行，**trying to use file: "/index.php?a=1"** ， n
 
 如果把try_files指令修改成`try_files $uri $uri/ /index.php =404;` ,去掉参数部分，同样的请求，就会返回index.php文件的内容，而不是404。原理和前面分析的一样。
 
-### 返回index.php文件内容
+### 示例3：返回index.php文件内容
 
 请求“http://local.bee.test/noexitsdir”,返回
 
