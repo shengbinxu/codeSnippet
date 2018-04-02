@@ -44,5 +44,5 @@ class PostfixExpression
 }
 
 // 对应的中缀表达式： 5 * ( ( (9+8) * (4 * 6) ) + 7)
-$str = '5 9 8 + 4 6 * * 710 + *';
+$str = '5 9 8 + 4 6 * * 7 + *';
 echo new PostfixExpression($str);
