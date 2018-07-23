@@ -1,0 +1,14 @@
+/*
+ * Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
+ */
+
+.show-enter {
+    opacity: 0;
+    transform: translateY(10px);
+    transform: scale(3);
+}
+.show-enter-active {
+    transition: transform .3s ease;
+}
+.show-enter-to {
+}

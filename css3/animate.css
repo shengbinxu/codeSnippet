@@ -1,0 +1,30 @@
+/*
+ * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+ */
+.light{
+    position: relative;
+    width: 289px;
+    height: 215px;
+    overflow: hidden;
+}
+
+.light .img1{
+    position: absolute;
+    opacity: 0;
+    transition: transform .4s;
+}
+
+.light .img2{
+    opacity: 1;
+    transition: transform .4s;
+}
+
+.light:hover .img1{
+    opacity: 1;
+    transform:scale(1.15)  translateZ(0);
+}
+
+.light:hover .img2{
+    opacity: 0;
+    transform:scale(1.15)  translateZ(0);
+}

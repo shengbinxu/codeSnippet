@@ -1,0 +1,446 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"msg",
+				"msgid"
+			],
+			[
+				"ms",
+				"msg_text\tchar [100] msg_text"
+			],
+			[
+				"cl",
+				"close\tint close()"
+			],
+			[
+				"fi",
+				"fixed_str\tchar [13] fixed_str"
+			],
+			[
+				"cont",
+				"concat_str\tchar [100] concat_str"
+			],
+			[
+				"con",
+				"concat_str\tchar [100] concat_str"
+			],
+			[
+				"fge",
+				"fgets\tchar * fgets(char *, int, FILE *)"
+			],
+			[
+				"st",
+				"string.h\tstandard header"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"s",
+				"stdlib.h\tstandard header"
+			],
+			[
+				"pr",
+				"per_names\t[]string ν"
+			],
+			[
+				"re",
+				"readLines\t[]string, error ƒ"
+			],
+			[
+				"Pr",
+				"Println\t ƒ"
+			],
+			[
+				"b",
+				"body\t[]byte ν"
+			],
+			[
+				"r",
+				"RawQuery\tstring ν"
+			],
+			[
+				"ex",
+				"Exit\t ƒ"
+			],
+			[
+				"Prin",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"to",
+				"tom2\tStudent2 ν"
+			],
+			[
+				"a",
+				"aLen\tint ν"
+			],
+			[
+				"P",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"p",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"Fp",
+				"Fprintln\tn int, err error ƒ"
+			],
+			[
+				"imp",
+				"import\timport (...) ʂ"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Z/golang/src/gopl.io/http.go",
+			"settings":
+			{
+				"buffer_size": 1956,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "msgQueue.c",
+			"settings":
+			{
+				"buffer_size": 1174,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pipe.c",
+			"settings":
+			{
+				"buffer_size": 1400,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/GoSublime/GoSublime.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/GoSublime/GoSublime.sublime-build",
+					""
+				],
+				[
+					"Packages/User/golang.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/GoSublime/GoSublime.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Z/golang/src/gopl.io"
+	],
+	"file_history":
+	[
+		"/Z/c/pipe.c",
+		"/Z/c/msgQueue.c",
+		"/C/Users/xushengbin/AppData/Roaming/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
+		"/C/code/golang/http.go",
+		"/Z/golang/src/gopl.io/ch4/github/github.go",
+		"/Z/golang/src/gopl.io/ch4/github/search.go",
+		"/Z/golang/src/gopl.io/ch4/issues/main.go",
+		"/Z/golang/src/gopl.io/ch8/thumbnail/thumbnail.go",
+		"/Z/golang/src/gopl.io/ch8/thumbnail/main.go",
+		"/Z/golang/gopl.io/ch8/thumbnail/thumbnail.go",
+		"/Z/golang/gopl.io/ch8/thumbnail/main.go",
+		"/Z/golang/gopl.io/ch8/pipeline2/main.go",
+		"/Z/golang/gopl.io/ch8/pipeline1/main.go",
+		"/Z/golang/gopl.io/ch8/netcat3/netcat.go",
+		"/Z/golang/gopl.io/ch8/netcat1/netcat.go",
+		"/C/code/golang/gopl.io/ch1/echo2/main.go",
+		"/C/code/golang/gopl.io/ch8/clock1/clock.go",
+		"/C/code/golang/gopl.io/ch8/clock2/clock.go",
+		"/C/code/golang/gopl.io/ch8/netcat3/netcat.go",
+		"/C/code/golang/goroutines.go",
+		"/C/code/golang/struct.go",
+		"/C/code/golang/hello.go",
+		"/C/Users/xushengbin/AppData/Roaming/Sublime Text 3/Packages/User/golang.sublime-build",
+		"/C/Users/xushengbin/AppData/Roaming/Sublime Text 3/Packages/GoSublime/USAGE.md"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"C:\\code\\golang",
+			"Z:\\golang\\src\\gopl.io"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"yingyan",
+			"github"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Z/golang/src/gopl.io/http.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								718,
+								718
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "msgQueue.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1115,
+								1123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "pipe.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o://C:\\code\\golang":
+	{
+		"height": 279.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 114.0
+	},
+	"output.GoSublime-output":
+	{
+		"height": 126.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 126.0
+	},
+	"output.exec":
+	{
+		"height": 299.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/golang.sublime-build",
+	"project": "golang.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 383.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

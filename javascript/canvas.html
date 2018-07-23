@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+</head>
+<body>
+	<canvas width="500" height="140" id="canvas">
+		
+	</canvas>
+	<br>
+	<canvas id="radial-canvas">
+		
+	</canvas>
+	<br>
+	<video src="C:\Users\xushengbin\Desktop\card.mp4" autobuffer autoloop loop controls poster="/images/video.png"
+		width="360" height="240" id="vid" 
+	>
+	</video>
+	<div>
+		<button type="" id="pressme">Snapshot</button>
+	</div>
+	<canvas id="snapshot-canvas">
+	</canvas>
+
+	<video id="vid2" hidden src="C:\Users\xushengbin\Desktop\card.mp4" preload="auto"
+	width="360" height="240" autoplay></video>
+	<canvas id="video-canvas" width="360" height="240">
+	Your browser doesn't support the <code>canvas</code> element
+	</canvas>
+
+	<script type="text/javascript">
+		var ctx = document.getElementById('canvas').getContext('2d');
+		var grad = ctx.createLinearGradient(10,10,60,60);
+		grad.addColorStop(0, "red");
+		grad.addColorStop(0.5, "white");
+		grad.addColorStop(1, "black");
+		ctx.fillStyle = grad;
+		// ctx.fillRect(0,0,500,140);
+		ctx.fillRect(10,10,60,60);
+
+
+		var ctx = document.getElementById('radial-canvas').getContext('2d');
+		var grad = ctx.createRadialGradient(250,70,20,200,60,100);
+		grad.addColorStop(0, "red");
+		grad.addColorStop(0.5, "white");
+		grad.addColorStop(1, "black");
+		ctx.fillStyle = grad;
+		ctx.fillRect(0,0,600,200);
+
+		var ctx = document.getElementById('snapshot-canvas').getContext('2d');
+		var imageElement = document.getElementById('vid');
+		document.getElementById("pressme").onclick = function(e) {
+			ctx.drawImage(imageElement, 0, 0, 360, 240);
+		}
+
+
+		var ctx = document.getElementById("video-canvas").getContext("2d");
+		var imageElement = document.getElementById("vid2");
+		var width = 100;
+		var height = 10;
+		ctx.lineWidth = 5;
+		ctx.strokeStyle = "red";
+		setInterval(function() {
+		ctx.drawImage(imageElement, 0, 0, 360, 240);
+		ctx.strokeRect(180 - (width/2),120 - (height/2), width, height);
+		}, 25);
+		setInterval(function() {
+		width = (width + 1) % 200;
+		height = (height + 3) % 200;
+		}, 100);
+	</script>
+</body>
+</html>

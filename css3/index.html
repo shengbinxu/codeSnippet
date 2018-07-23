@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./animate.css" rel="stylesheet" type="text/css">
+    <link href="./vue_aminate.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<div class="light">-->
+<!--<img src="http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use11.png" class="img1">-->
+<!--<img src="http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use1.png" class="img2">-->
+<!--</div>-->
+
+<div id="app-aminate">
+    <button v-on:click="show = !show">show</button>
+    <transition name="show">
+        <div class="show-number" v-if="show" style="border: 1px solid;width: 30px;height: 30px">
+            2
+        </div>
+    </transition>
+</div>
+<script src="vue.min.js"></script>
+<script src="vue_aminate.js"></script>
+</body>
+</html>

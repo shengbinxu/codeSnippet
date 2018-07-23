@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            test = function () {
+                this.txt = "这是一个对象属性";
+                $("div").click($.proxy(this.myClick, this)); // 等同于下面的代码
+                // var that = this;
+                // $("div").click(function (event) {
+                //     that.myClick(event);
+                // });
+
+            };
+
+            test.prototype.myClick = function (event) {
+                alert(this.txt);
+                alert(event.currentTarget.nodeName);
+            };
+
+            var x = new test();
+        });
+    </script>
+</head>
+<body>
+
+<div>这是一个 div 元素。</div>
+
+</body>
+</html>
